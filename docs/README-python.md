@@ -71,7 +71,7 @@ configuração funcione corretamente.
 #### Referências
 
 - [Como escrever e executar um script
-  Python](https://entrenamiento-python-basico.readthedocs.io/es/3.7/leccion1/holamundo.html#ejecucion)
+  Python](https://www.usandopy.com/pt/artigo/executando-scripts-python/)
 
 ### 4.3 Implementar o jogo
 
