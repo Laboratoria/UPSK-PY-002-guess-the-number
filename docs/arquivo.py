@@ -18,21 +18,24 @@ def adivinhar_numero():
                 print("Palpite muito alto. Tente novamente.")
             else:
                 print("Parabéns! Você acertou o número secreto!")
-                print("Tentativas:", tentativas_p)
+                print("Tentativas: {}" .format(tentativas_p))
                 break
             jogador = 'c'
+            print('-=-'*20)
             
         elif jogador == 'c':
             palpite_c = random.randint(1, 100)
             tentativas_c.append(palpite_c)
 
             if palpite_c < numero_secreto:
-                print("O computador chutou", palpite_c, "e foi muito baixo.")
+                print("O computador chutou {} e foi muito baixo." .format(palpite_c))
             elif palpite_c > numero_secreto:
-                print("O computador chutou", palpite_c, "e foi muito alto.")
+                print("O computador chutou {} e foi muito alto.".format(palpite_c))
             else:
                 print("O computador acertou o número secreto!")
-                print("Tentativas do computador:", tentativas_c)
+                print("Tentativas do computador: {}" .format(tentativas_c))
                 break
             jogador = 'p'
+            print('-=-'*20)
+
 adivinhar_numero()
