@@ -34,19 +34,24 @@ def analisar_palpite(numero_secreto, palpite):
         
 #função para reiniciar caso o jogador queira
 def reiniciar_jogo(jogadores):
+    resetar_palpites(jogadores)
     resposta = input("Deseja reiniciar o jogo? (s/n): ")
 
     if resposta.lower() == 's':
         roda_jogo(jogadores)
-    else:
+    elif resposta.lower() == 'n':
         print("Fim de jogo!")      
+    else:
+        print("Por favor, digite apenas 's' para sim ou 'n' para não:")
+        reiniciar_jogo(jogadores)
         
+
 #função para printar tentativas do vencedor 
 def printar_tentativas(jogador):
     if jogador["nome"] == "Computador":
-        print(f"As tentativas do computador foram:{jogador['palpites_computador']}")
+        print(f"As tentativas do computador foram: { ' , '.join(map(str, jogador['palpites_computador']))}")
     else:
-        print(f"Suas tentativas foram:{jogador['palpites_humano']}")
+        print(f"Suas tentativas foram: { ' , '.join(map(str, jogador['palpites_humano']))}")
         
 
 #função para alternar os jogadores 
@@ -56,6 +61,12 @@ def troca_jogadores(beterraba):
     else:
         beterraba = 1
     return beterraba
+
+#função resetar palpites para um novo jogo
+def resetar_palpites(jogadores):
+ for jogador in jogadores:
+        jogador["palpites_computador"] = []
+        jogador["palpites_humano"] = []
 
  
 #loop para alternar entre jogadas do humano e computador
@@ -67,9 +78,11 @@ def roda_jogo(jogadores):
         palpite = fazer_palpite(jogador)  
         armazenar_palpite(jogador, palpite)
         analisar_palpite(numero_secreto, palpite)
+        print('-=-'*20)
         
         if palpite == numero_secreto:
             printar_tentativas(jogador)
+            print('-=-'*20)
             reiniciar_jogo(jogadores)
             break    
         

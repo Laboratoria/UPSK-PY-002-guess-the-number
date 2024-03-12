@@ -8,7 +8,7 @@ print("Bem-vindo ao jogo de adivinhar o número!")
 nome_jogador = input("Qual é o seu nome? ")
 
 # indicar início do jogo    
-print("Vamos começar!")
+print("Vamos começar!Tente advinhar um número entre 1 e 100")
 
 # definição de jogadores
 adversarios = [ 
