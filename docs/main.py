@@ -45,6 +45,8 @@ def reiniciar_jogo(jogadores):
         print("Por favor, digite apenas 's' para sim ou 'n' para não:")
         reiniciar_jogo(jogadores)
         
+    
+        
 
 #função para printar tentativas do vencedor 
 def printar_tentativas(jogador):
