@@ -13,8 +13,17 @@ def fazer_palpite(jogador):
         palpite = random.randint(1, 100)
         print(f'{jogador["nome"]} palpitou {palpite}')
     else:
-        palpite = int(input(f'{jogador["nome"]}, faça seu palpite: '))
+        while True:
+            try:
+                palpite = int(input(f'{jogador["nome"]}, faça seu palpite: '))
+                if palpite >= 1 and palpite <= 100:
+                    break
+                else:
+                    print("Apenas números entre 1 e 100.")
+            except ValueError:
+                print("Apenas números entre 1 e 100.")
     return palpite
+    
 
 #armazenar os palpites no array palpite de cada jogador
 def armazenar_palpite(jogador, palpite):
