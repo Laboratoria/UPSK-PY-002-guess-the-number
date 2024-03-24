@@ -1,4 +1,9 @@
 {
   "project": "guess-the-number",
-  "cohort": "UPSK-PY-002"
+  "cohort": "UPSK-PY-002",
+  "pylint.args": [
+    "--disable=missing-module-docstring",
+    "--disable=missing-class-docstring",
+    "--disable=missing-function-docstring"
+  ]
 }
